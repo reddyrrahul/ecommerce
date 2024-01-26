@@ -1,9 +1,9 @@
-package com.pesto.shopping.user;
+package com.pesto.shopping.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepo extends JpaRepository<User, Long> {
+public interface ProductRepo extends JpaRepository<Product, Long> {
 
 }

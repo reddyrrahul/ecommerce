@@ -14,8 +14,8 @@ public class UserServiceImpl implements UserService {
     UserRepo userRepo;
 
     @Override
-    public UserBean getUser(Long userId) {
-        UserBean user = userRepo.findById(userId).orElse(null);
+    public User getUser(Long userId) {
+        User user = userRepo.findById(userId).orElse(null);
         if(null == user){
             throw new UserNotFoundException("User Not Found");
         }
@@ -23,16 +23,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserBean addUser(UserBean userBean) {
-        return userRepo.save(userBean);
+    public User addUser(User user) {
+        return userRepo.save(user);
     }
 
     @Override
-    public UserBean updateUser(UserBean userBean) {
-        if(null == userRepo.findById(userBean.getId()).orElse(null)){
+    public User updateUser(User user) {
+        if(null == userRepo.findById(user.getId()).orElse(null)){
             throw new EntityNotFoundException("User Not Found");
         }
-        return userRepo.save(userBean);
+        return userRepo.save(user);
     }
 
     @Override

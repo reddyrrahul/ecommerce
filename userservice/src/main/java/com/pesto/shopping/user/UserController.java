@@ -12,20 +12,20 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
-    public ResponseEntity<UserBean> getUser(@PathVariable("userId") Long userId) {
-        return new ResponseEntity<UserBean>(userService.getUser(userId), HttpStatus.OK);
+    public ResponseEntity<User> getUser(@PathVariable("userId") Long userId) {
+        return new ResponseEntity<User>(userService.getUser(userId), HttpStatus.OK);
     }
 
 
     @RequestMapping(value = "/users", method = RequestMethod.POST)
-    public ResponseEntity<UserBean> addUser(@RequestBody UserBean userBean) {
-        return new ResponseEntity<UserBean>(userService.addUser(userBean), HttpStatus.OK);
+    public ResponseEntity<User> addUser(@RequestBody User user) {
+        return new ResponseEntity<User>(userService.addUser(user), HttpStatus.OK);
     }
 
 
     @RequestMapping(value = "/users", method = RequestMethod.PUT)
-    public ResponseEntity<UserBean> upDateUser(@RequestBody UserBean userBean) {
-        return new ResponseEntity<UserBean>(userService.updateUser(userBean), HttpStatus.OK);
+    public ResponseEntity<User> upDateUser(@RequestBody User user) {
+        return new ResponseEntity<User>(userService.updateUser(user), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/users/{userId}", method = RequestMethod.DELETE)

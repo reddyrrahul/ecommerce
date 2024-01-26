@@ -2,11 +2,11 @@ package com.pesto.shopping.user;
 
 public interface UserService {
 
-    public UserBean getUser(Long userId);
+    public User getUser(Long userId);
 
-    public UserBean addUser(UserBean userBean);
+    public User addUser(User user);
 
-    public UserBean updateUser(UserBean userBean);
+    public User updateUser(User user);
 
     public void deleteUser(Long userId);
 }
